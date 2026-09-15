@@ -1,0 +1,33 @@
+HUGOLAND - COMO GERAR E INSTALAR NO TABLET
+
+GERAR O APK (uma vez, uns 10 minutos, sem instalar nada no computador)
+1) Crie uma conta em github.com (se não tiver) e clique em "New repository".
+   Nome: hugoland. Pode ser Private. Clique em "Create repository".
+2) Na página do repositório, clique em "uploading an existing file".
+   Descompacte o zip e arraste TODO o conteúdo da pasta hugoland (inclusive a pasta .github).
+   Clique em "Commit changes".
+   Dica: a pasta .github é oculta no Windows/Mac. Se ela não subir, clique em
+   "Add file > Create new file", digite o nome .github/workflows/apk.yml e cole o conteúdo do arquivo.
+3) Abra a aba "Actions". O "Gerar APK Hugoland" começa sozinho (se não, clique nele e em "Run workflow").
+   Espere ficar verde (cerca de 5 a 8 minutos).
+
+INSTALAR NO TABLET
+4) No tablet, abra o repositório no navegador, entre em "Releases" (lado direito) e baixe Hugoland.apk.
+   (Repositório privado: faça login no GitHub no tablet, ou baixe no computador e passe o arquivo.)
+5) Toque no arquivo baixado e permita "instalar apps desconhecidos" para o navegador.
+6) Abra o Hugoland. Ele já vem conectado: o indicador verde "Ao vivo" aparece no topo
+   e as últimas rodadas são carregadas na hora.
+
+USO
+- Painel: cada combinação mostra quantas rodadas seguidas estão sem sair.
+  Saiu qualquer resultado da combinação, a sequência volta a zero.
+- "+ Nova": crie quantas combinações quiser (nome, resultados e alerta opcional).
+- Histórico: tabela com a sequência de cada combinação rodada a rodada.
+  "Exportar Excel" e "Exportar JSON" abrem a tela de compartilhar do Android:
+  escolha Drive, WhatsApp, e-mail ou "Salvar em Arquivos".
+- "Importar JSON" restaura tudo em outro aparelho.
+- A tela fica ligada enquanto o app estiver aberto (dá para desligar em Configurar).
+
+ATUALIZAR O APP
+Troque os arquivos da pasta www no GitHub: um novo APK é gerado sozinho em Releases.
+Instale por cima. Se estiver vindo da versão 1, as combinações antigas são mantidas.

@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#120D22">
+<meta name="application-name" content="Hugoland">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Hugoland</title>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjgwIDYwIDg2NCA5MDQiPjxkZWZzPgogPHJhZGlhbEdyYWRpZW50IGlkPSJiZyIgY3g9IjUwJSIgY3k9IjQwJSIgcj0iNzUlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMzQTJBNkUiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxNDBGMjYiLz48L3JhZGlhbEdyYWRpZW50PgogPGxpbmVhckdyYWRpZW50IGlkPSJnb2xkIiB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjRkZFMzhBIi8+PHN0b3Agb2Zmc2V0PSIuNTUiIHN0b3AtY29sb3I9IiNGNUM1NDIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNDOTkwMUUiLz48L2xpbmVhckdyYWRpZW50PgogPHJhZGlhbEdyYWRpZW50IGlkPSJzaGFkZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNTAlIj48c3RvcCBvZmZzZXQ9Ii41NSIgc3RvcC1jb2xvcj0iIzAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMDAwIiBzdG9wLW9wYWNpdHk9Ii4yOCIvPjwvcmFkaWFsR3JhZGllbnQ+CjwvZGVmcz48Y2lyY2xlIGN4PSI1MTIiIGN5PSI1MTIiIHI9IjQwOCIgZmlsbD0idXJsKCNnb2xkKSIvPgo8Y2lyY2xlIGN4PSI1MTIiIGN5PSI1MTIiIHI9IjM5NCIgZmlsbD0iIzJBMUY0QSIvPgo8cGF0aCBkPSJNNTEyLDUxMiBMNTEyLjAsMTUyLjAgQTM2MCwzNjAgMCAwIDEgNjkyLjAsMjAwLjIgWiIgZmlsbD0iI0Y1QzU0MiIvPjxwYXRoIGQ9Ik01MTIsNTEyIEw2OTIuMCwyMDAuMiBBMzYwLDM2MCAwIDAgMSA4MjMuOCwzMzIuMCBaIiBmaWxsPSIjNUFBOUYwIi8+PHBhdGggZD0iTTUxMiw1MTIgTDgyMy44LDMzMi4wIEEzNjAsMzYwIDAgMCAxIDg3Mi4wLDUxMi4wIFoiIGZpbGw9IiNEMDdCRTgiLz48cGF0aCBkPSJNNTEyLDUxMiBMODcyLjAsNTEyLjAgQTM2MCwzNjAgMCAwIDEgODIzLjgsNjkyLjAgWiIgZmlsbD0iIzQzRDlBMyIvPjxwYXRoIGQ9Ik01MTIsNTEyIEw4MjMuOCw2OTIuMCBBMzYwLDM2MCAwIDAgMSA2OTIuMCw4MjMuOCBaIiBmaWxsPSIjRkY5RjQzIi8+PHBhdGggZD0iTTUxMiw1MTIgTDY5Mi4wLDgyMy44IEEzNjAsMzYwIDAgMCAxIDUxMi4wLDg3Mi4wIFoiIGZpbGw9IiM1QUE5RjAiLz48cGF0aCBkPSJNNTEyLDUxMiBMNTEyLjAsODcyLjAgQTM2MCwzNjAgMCAwIDEgMzMyLjAsODIzLjggWiIgZmlsbD0iI0ZGNkI4MSIvPjxwYXRoIGQ9Ik01MTIsNTEyIEwzMzIuMCw4MjMuOCBBMzYwLDM2MCAwIDAgMSAyMDAuMiw2OTIuMCBaIiBmaWxsPSIjNEZEMUM1Ii8+PHBhdGggZD0iTTUxMiw1MTIgTDIwMC4yLDY5Mi4wIEEzNjAsMzYwIDAgMCAxIDE1Mi4wLDUxMi4wIFoiIGZpbGw9IiNGNUM1NDIiLz48cGF0aCBkPSJNNTEyLDUxMiBMMTUyLjAsNTEyLjAgQTM2MCwzNjAgMCAwIDEgMjAwLjIsMzMyLjAgWiIgZmlsbD0iIzlCN0JGRiIvPjxwYXRoIGQ9Ik01MTIsNTEyIEwyMDAuMiwzMzIuMCBBMzYwLDM2MCAwIDAgMSAzMzIuMCwyMDAuMiBaIiBmaWxsPSIjNDNEOUEzIi8+PHBhdGggZD0iTTUxMiw1MTIgTDMzMi4wLDIwMC4yIEEzNjAsMzYwIDAgMCAxIDUxMi4wLDE1Mi4wIFoiIGZpbGw9IiNEMDdCRTgiLz4KPGNpcmNsZSBjeD0iNTEyIiBjeT0iNTEyIiByPSIzNjAiIGZpbGw9InVybCgjc2hhZGUpIi8+CjxjaXJjbGUgY3g9IjUxMi4wIiBjeT0iMTMwLjAiIHI9IjExIiBmaWxsPSIjRkZGM0M0Ii8+PGNpcmNsZSBjeD0iNzAzLjAiIGN5PSIxODEuMiIgcj0iMTEiIGZpbGw9IiNGRkYzQzQiLz48Y2lyY2xlIGN4PSI4NDIuOCIgY3k9IjMyMS4wIiByPSIxMSIgZmlsbD0iI0ZGRjNDNCIvPjxjaXJjbGUgY3g9Ijg5NC4wIiBjeT0iNTEyLjAiIHI9IjExIiBmaWxsPSIjRkZGM0M0Ii8+PGNpcmNsZSBjeD0iODQyLjgiIGN5PSI3MDMuMCIgcj0iMTEiIGZpbGw9IiNGRkYzQzQiLz48Y2lyY2xlIGN4PSI3MDMuMCIgY3k9Ijg0Mi44IiByPSIxMSIgZmlsbD0iI0ZGRjNDNCIvPjxjaXJjbGUgY3g9IjUxMi4wIiBjeT0iODk0LjAiIHI9IjExIiBmaWxsPSIjRkZGM0M0Ii8+PGNpcmNsZSBjeD0iMzIxLjAiIGN5PSI4NDIuOCIgcj0iMTEiIGZpbGw9IiNGRkYzQzQiLz48Y2lyY2xlIGN4PSIxODEuMiIgY3k9IjcwMy4wIiByPSIxMSIgZmlsbD0iI0ZGRjNDNCIvPjxjaXJjbGUgY3g9IjEzMC4wIiBjeT0iNTEyLjAiIHI9IjExIiBmaWxsPSIjRkZGM0M0Ii8+PGNpcmNsZSBjeD0iMTgxLjIiIGN5PSIzMjEuMCIgcj0iMTEiIGZpbGw9IiNGRkYzQzQiLz48Y2lyY2xlIGN4PSIzMjEuMCIgY3k9IjE4MS4yIiByPSIxMSIgZmlsbD0iI0ZGRjNDNCIvPgo8Y2lyY2xlIGN4PSI1MTIiIGN5PSI1MTIiIHI9IjE1MCIgZmlsbD0idXJsKCNnb2xkKSIvPgo8Y2lyY2xlIGN4PSI1MTIiIGN5PSI1MTIiIHI9IjEzMiIgZmlsbD0iIzFCMTUzMCIvPgo8dGV4dCB4PSI1MTIiIHk9IjU3NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IlJ1YmlrLCBBcmlhbCBCbGFjaywgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjgwMCIgZm9udC1zaXplPSIxOTAiIGZpbGw9InVybCgjZ29sZCkiPkg8L3RleHQ+CjxwYXRoIGQ9Ik00NjgsODIgTDU1Niw4MiBMNTEyLDE2MiBaIiBmaWxsPSJ1cmwoI2dvbGQpIiBzdHJva2U9IiMxQjE1MzAiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#120D22; --bg2:#1A1330; --card:#211A3B; --card2:#2A2150; --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.14);
+  --ink:#F4F0FF; --mute:#A59CC6; --dim:#6E6591;
+  --gold:#F5C542; --gold2:#FFE38A; --hot:#FF4D6D; --ok:#35D69B; --warn:#FF9F43;
+  --r:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{background:var(--bg);color:var(--ink);font-family:Rubik,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.4}
+body{min-height:100vh;background:radial-gradient(1200px 600px at 10% -10%,#2B1F55 0,transparent 60%),radial-gradient(900px 500px at 110% 10%,#1F2A55 0,transparent 55%),var(--bg);background-attachment:fixed;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:10px}
+.num{font-variant-numeric:tabular-nums}
+
+/* topo */
+header{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(18,13,34,.72);border-bottom:1px solid var(--line)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;max-width:1600px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.logo{width:42px;height:42px;flex:none;filter:drop-shadow(0 4px 12px rgba(245,197,66,.3))}
+.brand h1{font-size:1.35rem;font-weight:800;letter-spacing:-.02em;line-height:1}
+.brand h1 span{background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,#C9901E);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand small{display:block;color:var(--mute);font-size:.72rem;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pills{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.pill{display:flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line);padding:6px 11px;border-radius:99px;font-size:.8rem;color:var(--mute);white-space:nowrap}
+.dot{width:9px;height:9px;border-radius:99px;background:var(--dim)}
+.pill.on{color:var(--ink)} .pill.on .dot{background:var(--ok);box-shadow:0 0 0 0 rgba(53,214,155,.6);animation:pulse 2s infinite}
+.pill.err{color:var(--hot);border-color:rgba(255,77,109,.35)} .pill.err .dot{background:var(--hot)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(53,214,155,.55)}70%{box-shadow:0 0 0 8px rgba(53,214,155,0)}100%{box-shadow:0 0 0 0 rgba(53,214,155,0)}}
+
+/* faixa de últimas rodadas */
+.ribbon{max-width:1600px;margin:0 auto;padding:8px 16px 10px;display:flex;gap:10px;align-items:center}
+.ribbon .lbl{font-size:.72rem;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;flex:none}
+.strip{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px}
+.strip::-webkit-scrollbar{display:none}
+.ball{flex:none;min-width:38px;height:38px;padding:0 9px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;color:#161027;box-shadow:inset 0 -3px 0 rgba(0,0,0,.2)}
+.ball.sm{font-size:.62rem;font-weight:700;line-height:1.05;text-align:center;max-width:62px}
+.ball.new{animation:pop .45s ease}
+@keyframes pop{0%{transform:scale(.4);opacity:0}70%{transform:scale(1.12)}100%{transform:scale(1);opacity:1}}
+
+main{max-width:1600px;margin:0 auto;padding:6px 16px 20px}
+.view{display:none}.view.on{display:block;animation:fade .2s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+/* painel */
+.layout{display:grid;gap:16px}
+@media (min-width:1100px){.layout{grid-template-columns:1fr 370px;align-items:start}.side{position:sticky;top:132px}}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:4px 0 12px;flex-wrap:wrap}
+.bar h2{font-size:1.1rem;font-weight:700}
+.bar h2 small{color:var(--mute);font-weight:400;font-size:.85rem;margin-left:6px}
+.seg-ctl{display:flex;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:3px}
+.seg-ctl button{padding:7px 11px;border-radius:9px;font-size:.8rem;color:var(--mute);font-weight:600}
+.seg-ctl button.on{background:var(--card2);color:var(--ink)}
+
+.grid{display:grid;gap:12px;grid-template-columns:1fr}
+@media (min-width:600px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1400px){.grid{grid-template-columns:repeat(3,1fr)}}
+
+.combo{position:relative;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 14px;box-shadow:var(--shadow);overflow:hidden;transition:border-color .2s,transform .2s}
+.combo.hot{border-color:rgba(255,77,109,.55);background:linear-gradient(180deg,#44203F,#2A1733)}
+.combo.hot::before{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,77,109,.35),0 0 40px rgba(255,77,109,.15) inset;pointer-events:none}
+.combo.flash{animation:flash .9s ease}
+@keyframes flash{0%{box-shadow:0 0 0 0 rgba(53,214,155,.9)}100%{box-shadow:0 0 0 18px rgba(53,214,155,0)}}
+.c-head{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.c-name{font-weight:700;font-size:1rem;line-height:1.25}
+.c-rule{font-size:.72rem;color:var(--mute);margin-top:2px}
+.c-act{display:flex;gap:2px;flex:none}
+.icon{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:var(--mute)}
+.icon:hover{background:rgba(255,255,255,.06);color:var(--ink)}
+.icon svg{width:18px;height:18px}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 6px}
+.chip{border-radius:8px;padding:3px 9px;font-weight:700;font-size:.78rem;color:#161027}
+.c-main{display:flex;align-items:flex-end;gap:10px;margin-top:4px}
+.count{font-size:3.6rem;font-weight:800;line-height:.95;letter-spacing:-.04em}
+.combo.hot .count{color:var(--hot)}
+.count-lbl{color:var(--mute);font-size:.85rem;padding-bottom:6px;line-height:1.2}
+.prog{height:6px;background:rgba(255,255,255,.07);border-radius:99px;margin:12px 0 10px;overflow:hidden}
+.prog i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--ok),var(--gold) 70%,var(--hot));transition:width .4s ease}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.stats div{font-size:.68rem;color:var(--dim);text-transform:uppercase;letter-spacing:.04em}
+.stats b{display:block;white-space:nowrap;color:var(--ink);font-size:.92rem;text-transform:none;letter-spacing:0;margin-top:1px;font-weight:600}
+.add{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:210px;border:2px dashed var(--line2);border-radius:var(--r);color:var(--mute);font-weight:600;transition:all .2s}
+.add:hover{border-color:var(--gold);color:var(--gold)}
+.add span{font-size:2.2rem;line-height:1}
+
+/* lateral */
+.side{display:grid;gap:14px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.panel h3{font-size:.95rem;font-weight:700;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+.panel h3 small{color:var(--mute);font-weight:400;font-size:.78rem}
+.dist{display:grid;gap:8px}
+.drow{display:grid;grid-template-columns:118px 1fr 48px;align-items:center;gap:8px;font-size:.8rem}
+.drow .nm{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.drow .tr{height:10px;background:rgba(255,255,255,.06);border-radius:99px;overflow:hidden}
+.drow .tr i{display:block;height:100%;border-radius:99px}
+.drow .vl{text-align:right;color:var(--mute)}
+.drow .vl b{color:var(--ink)}
+.pad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.key{border-radius:14px;min-height:62px;font-weight:800;font-size:1.3rem;color:#161027;box-shadow:inset 0 -4px 0 rgba(0,0,0,.2);transition:transform .08s;padding:4px;line-height:1.05}
+.key.sm{font-size:.72rem;font-weight:700}
+.key:active{transform:scale(.94)}
+.row-btns{display:flex;gap:8px;margin-top:10px}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;padding:11px 16px;font-weight:600;background:var(--card2);border:1px solid var(--line2);font-size:.9rem;white-space:nowrap}
+.btn:hover{border-color:rgba(255,255,255,.28)}
+.btn.gold{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#1A1330;border:0}
+.btn.ghost{background:transparent}
+.btn.danger{background:transparent;border-color:rgba(255,77,109,.5);color:var(--hot)}
+.btn.grow{flex:1}
+.btn:disabled{opacity:.4;pointer-events:none}
+.btn svg{width:18px;height:18px}
+
+/* histórico */
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.table-wrap{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:auto;max-height:calc(100vh - 290px)}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th{max-width:160px;overflow:hidden;text-overflow:ellipsis;position:sticky;top:0;background:var(--card2);text-align:left;font-weight:600;color:var(--mute);font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;padding:10px 12px;white-space:nowrap;z-index:1}
+td{padding:9px 12px;border-top:1px solid var(--line);white-space:nowrap}
+td.hit{color:var(--ok);font-weight:700}
+.muted{color:var(--mute)}
+.note{color:var(--mute);font-size:.85rem;margin:0 2px 10px}
+
+/* configurar */
+.cfg{display:grid;gap:14px}
+@media (min-width:900px){.cfg{grid-template-columns:1fr 1fr;align-items:start}}
+label.f{display:block;font-size:.8rem;color:var(--mute);margin:12px 0 6px}
+input[type=text],input[type=number],select,textarea{width:100%;background:var(--bg2);border:1px solid var(--line2);border-radius:12px;padding:11px 12px;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+.sw{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.sw:first-of-type{border-top:0}
+.sw span small{display:block;color:var(--mute);font-size:.78rem}
+.tg{appearance:none;-webkit-appearance:none;width:48px;height:28px;border-radius:99px;background:var(--card2);border:1px solid var(--line2);position:relative;flex:none;cursor:pointer;transition:background .2s}
+.tg::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:99px;background:#fff;transition:transform .2s}
+.tg:checked{background:var(--ok);border-color:var(--ok)} .tg:checked::after{transform:translateX(20px)}
+.segrow{display:grid;grid-template-columns:44px 110px 1fr 40px;gap:8px;align-items:center;margin-bottom:8px}
+.segrow input[type=color]{width:44px;height:44px;border:0;border-radius:12px;background:none;padding:0;cursor:pointer}
+.out{margin-top:10px;font-size:.82rem;color:var(--mute);white-space:pre-wrap;word-break:break-word;background:var(--bg2);border-radius:12px;padding:10px;display:none}
+.out.on{display:block}
+details summary{cursor:pointer;color:var(--mute);font-size:.88rem;margin-top:12px}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:50;display:none;align-items:flex-end;justify-content:center;background:rgba(8,5,18,.6);backdrop-filter:blur(4px)}
+.modal.on{display:flex}
+.sheet{width:100%;max-width:560px;max-height:92vh;overflow:auto;background:var(--bg2);border:1px solid var(--line2);border-radius:22px 22px 0 0;padding:20px;animation:up .25s ease}
+@media (min-width:700px){.modal{align-items:center}.sheet{border-radius:22px}}
+@keyframes up{from{transform:translateY(30px);opacity:0}to{transform:none;opacity:1}}
+.sheet h2{font-size:1.2rem;margin-bottom:4px}
+.sheet p.help{color:var(--mute);font-size:.85rem}
+.pick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px}
+@media (min-width:500px){.pick{grid-template-columns:repeat(5,1fr)}}
+.pick button{border-radius:12px;min-height:54px;font-weight:800;color:#161027;opacity:.3;position:relative;transition:opacity .15s,transform .15s;font-size:1.05rem;line-height:1.05;padding:4px}
+.pick button.sm{font-size:.68rem;font-weight:700}
+.pick button.on{opacity:1;box-shadow:0 0 0 3px #fff inset}
+.pick .ord{position:absolute;top:-7px;right:-5px;background:var(--gold);color:#161027;border-radius:99px;font-size:.68rem;padding:1px 6px}
+.rule{display:grid;gap:8px;margin-top:6px}
+.rule label{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--line2);border-radius:12px;padding:11px;font-size:.9rem;cursor:pointer}
+.rule label:has(input:checked){border-color:var(--gold)}
+.rule input{margin-top:3px;accent-color:var(--gold)}
+.rule small{display:block;color:var(--mute)}
+
+nav{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;justify-content:center;gap:4px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:rgba(18,13,34,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+nav button{flex:1;max-width:220px;display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 0;border-radius:12px;color:var(--dim);font-size:.75rem;font-weight:600}
+nav button svg{width:22px;height:22px}
+nav button.on{color:var(--gold);background:rgba(245,197,66,.08)}
+
+.toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,10px);background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:14px;font-weight:600;opacity:0;pointer-events:none;transition:all .25s;z-index:60;max-width:90vw;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.empty{grid-column:1/-1;text-align:center;color:var(--mute);padding:30px}
+
+@media (min-width:1000px){
+  .top{padding:12px 28px}.ribbon{padding:8px 28px 12px}main{padding:8px 28px 24px}
+  .logo{width:52px;height:52px}.brand h1{font-size:1.7rem}.brand small{font-size:.8rem}
+  .ball{min-width:44px;height:44px;font-size:1.05rem}.ball.sm{font-size:.66rem}
+  .count{font-size:4.2rem}
+  .key{min-height:72px}
+}
+@media (max-width:520px){.seg-ctl .lg{display:none}.seg-ctl button{padding:7px 9px}.bar>div{width:100%;justify-content:space-between}.brand small{display:none}.stats{grid-template-columns:repeat(2,1fr)}.pill.cnt{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="top">
+    <div class="brand"><svg class="logo" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="80 60 864 904"><defs>
+ <radialGradient id="lgbg" cx="50%" cy="40%" r="75%"><stop offset="0" stop-color="#3A2A6E"/><stop offset="1" stop-color="#140F26"/></radialGradient>
+ <linearGradient id="lggold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE38A"/><stop offset=".55" stop-color="#F5C542"/><stop offset="1" stop-color="#C9901E"/></linearGradient>
+ <radialGradient id="lgshade" cx="50%" cy="50%" r="50%"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".28"/></radialGradient>
+</defs><circle cx="512" cy="512" r="408" fill="url(#lggold)"/>
+<circle cx="512" cy="512" r="394" fill="#2A1F4A"/>
+<path d="M512,512 L512.0,152.0 A360,360 0 0 1 692.0,200.2 Z" fill="#F5C542"/><path d="M512,512 L692.0,200.2 A360,360 0 0 1 823.8,332.0 Z" fill="#5AA9F0"/><path d="M512,512 L823.8,332.0 A360,360 0 0 1 872.0,512.0 Z" fill="#D07BE8"/><path d="M512,512 L872.0,512.0 A360,360 0 0 1 823.8,692.0 Z" fill="#43D9A3"/><path d="M512,512 L823.8,692.0 A360,360 0 0 1 692.0,823.8 Z" fill="#FF9F43"/><path d="M512,512 L692.0,823.8 A360,360 0 0 1 512.0,872.0 Z" fill="#5AA9F0"/><path d="M512,512 L512.0,872.0 A360,360 0 0 1 332.0,823.8 Z" fill="#FF6B81"/><path d="M512,512 L332.0,823.8 A360,360 0 0 1 200.2,692.0 Z" fill="#4FD1C5"/><path d="M512,512 L200.2,692.0 A360,360 0 0 1 152.0,512.0 Z" fill="#F5C542"/><path d="M512,512 L152.0,512.0 A360,360 0 0 1 200.2,332.0 Z" fill="#9B7BFF"/><path d="M512,512 L200.2,332.0 A360,360 0 0 1 332.0,200.2 Z" fill="#43D9A3"/><path d="M512,512 L332.0,200.2 A360,360 0 0 1 512.0,152.0 Z" fill="#D07BE8"/>
+<circle cx="512" cy="512" r="360" fill="url(#lgshade)"/>
+<circle cx="512.0" cy="130.0" r="11" fill="#FFF3C4"/><circle cx="703.0" cy="181.2" r="11" fill="#FFF3C4"/><circle cx="842.8" cy="321.0" r="11" fill="#FFF3C4"/><circle cx="894.0" cy="512.0" r="11" fill="#FFF3C4"/><circle cx="842.8" cy="703.0" r="11" fill="#FFF3C4"/><circle cx="703.0" cy="842.8" r="11" fill="#FFF3C4"/><circle cx="512.0" cy="894.0" r="11" fill="#FFF3C4"/><circle cx="321.0" cy="842.8" r="11" fill="#FFF3C4"/><circle cx="181.2" cy="703.0" r="11" fill="#FFF3C4"/><circle cx="130.0" cy="512.0" r="11" fill="#FFF3C4"/><circle cx="181.2" cy="321.0" r="11" fill="#FFF3C4"/><circle cx="321.0" cy="181.2" r="11" fill="#FFF3C4"/>
+<circle cx="512" cy="512" r="150" fill="url(#lggold)"/>
+<circle cx="512" cy="512" r="132" fill="#1B1530"/>
+<text x="512" y="574" text-anchor="middle" font-family="Rubik, Arial Black, sans-serif" font-weight="800" font-size="190" fill="url(#lggold)">H</text>
+<path d="M468,82 L556,82 L512,162 Z" fill="url(#lggold)" stroke="#1B1530" stroke-width="8" stroke-linejoin="round"/></svg><div><h1>Hugo<span>land</span></h1><small>Monitor Adventures Beyond Wonderland</small></div></div>
+    <div class="pills">
+      <div class="pill cnt"><span class="num" id="roundCount">0</span>&nbsp;rodadas</div>
+      <div class="pill" id="livePill" title=""><span class="dot"></span><span id="liveTxt">Manual</span></div>
+    </div>
+  </div>
+  <div class="ribbon"><span class="lbl">Últimas</span><div class="strip" id="strip"></div></div>
+</header>
+
+<main>
+  <!-- PAINEL -->
+  <section class="view on" id="v-painel">
+    <div class="layout">
+      <div>
+        <div class="bar">
+          <h2>Combinações <small id="comboCount"></small></h2>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+            <div class="seg-ctl" id="sortCtl" role="group" aria-label="Ordenar">
+              <button data-sort="manual">Criação</button>
+              <button data-sort="current">Maior<span class="lg"> sequência</span></button>
+              <button data-sort="record"><span class="lg">Perto do </span>Recorde</button>
+            </div>
+            <button class="btn gold" data-new>+ Nova</button>
+          </div>
+        </div>
+        <div class="grid" id="grid"></div>
+      </div>
+      <aside class="side">
+        <div class="panel">
+          <h3>Rodadas sem sair <small>por resultado</small></h3>
+          <div class="dist" id="dist"></div>
+        </div>
+        <div class="panel">
+          <h3>Registro manual <small>se a busca ao vivo falhar</small></h3>
+          <div class="pad" id="pad"></div>
+          <div class="row-btns"><button class="btn grow" id="undo">Desfazer última</button></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- HISTÓRICO -->
+  <section class="view" id="v-hist">
+    <div class="bar"><h2>Histórico <small id="histInfo"></small></h2></div>
+    <div class="tools">
+      <button class="btn gold" id="expXlsx">Exportar Excel</button>
+      <button class="btn" id="expJson">Exportar JSON</button>
+      <button class="btn" id="impJson">Importar JSON</button>
+      <button class="btn danger" id="clearHist">Apagar histórico</button>
+      <input type="file" id="fileIn" accept=".json,application/json" hidden>
+    </div>
+    <p class="note" id="histNote"></p>
+    <div class="table-wrap"><table><thead id="histHead"></thead><tbody id="histBody"></tbody></table></div>
+  </section>
+
+  <!-- CONFIGURAR -->
+  <section class="view" id="v-cfg">
+    <div class="bar"><h2>Configurar</h2></div>
+    <div class="cfg">
+      <div class="panel">
+        <h3>Dados ao vivo</h3>
+        <div class="sw"><span>Buscar resultados automaticamente<small>Atualiza sozinho a cada poucos segundos</small></span><input type="checkbox" class="tg" id="liveOn"></div>
+        <div class="sw"><span>Manter a tela ligada<small>Enquanto o app estiver aberto</small></span><input type="checkbox" class="tg" id="wakeOn"></div>
+        <label class="f" for="liveInt">Atualizar a cada (segundos)</label>
+        <input type="number" id="liveInt" min="5" value="10" inputmode="numeric">
+        <label class="f" for="maxRounds">Guardar no máximo (rodadas)</label>
+        <input type="number" id="maxRounds" min="100" value="50000" inputmode="numeric">
+        <div class="row-btns">
+          <button class="btn grow" id="liveTest">Testar conexão</button>
+          <button class="btn" id="liveReset">Fonte padrão</button>
+        </div>
+        <div class="out" id="liveOut"></div>
+        <details>
+          <summary>Avançado: endereço e caminhos da fonte</summary>
+          <label class="f" for="liveMode">De onde buscar</label>
+          <select id="liveMode">
+            <option value="direct">Direto da fonte (app Android)</option>
+            <option value="server">Pelo servidor próprio (/api/rounds)</option>
+          </select>
+          <label class="f" for="liveUrl">Endereço dos dados</label>
+          <input type="text" id="liveUrl" autocapitalize="off" autocorrect="off" spellcheck="false">
+          <label class="f" for="pId">Caminho do id</label><input type="text" id="pId" autocapitalize="off" spellcheck="false" placeholder="automático">
+          <label class="f" for="pTime">Caminho da data/hora</label><input type="text" id="pTime" autocapitalize="off" spellcheck="false" placeholder="automático">
+          <label class="f" for="pResult">Caminho do resultado</label><input type="text" id="pResult" autocapitalize="off" spellcheck="false" placeholder="automático">
+        </details>
+      </div>
+      <div class="panel">
+        <h3>Resultados do jogo <small>nome, cor e outros nomes da fonte</small></h3>
+        <div id="segList"></div>
+        <div class="row-btns"><button class="btn grow" id="addSeg">Adicionar resultado</button><button class="btn" id="resetSeg">Padrão</button></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- editor de combinação -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="sheet">
+    <h2 id="mTitle">Nova combinação</h2>
+    <p class="help">A sequência conta as rodadas seguidas sem sair nenhum dos resultados escolhidos. Saiu qualquer um deles, ela volta a zero.</p>
+    <label class="f">Resultados da combinação</label>
+    <div class="pick" id="mPick"></div>
+    <label class="f" for="mName">Nome (opcional)</label>
+    <input type="text" id="mName" placeholder="Ex.: 1 e 2">
+    <label class="f" for="mAlert">Alertar quando a sequência chegar a (0 = sem alerta)</label>
+    <input type="number" id="mAlert" min="0" value="0" inputmode="numeric">
+    <details id="mAdv">
+      <summary>Regra avançada</summary>
+      <div class="rule">
+        <label><input type="radio" name="mode" value="any" checked><span>Zera quando sair qualquer um (padrão)<small>Conta rodadas seguidas sem nenhum dos resultados.</small></span></label>
+        <label><input type="radio" name="mode" value="seq"><span>Zera quando saírem em sequência, nessa ordem<small>Ex.: 1, depois 2, depois 10 em rodadas seguidas.</small></span></label>
+      </div>
+    </details>
+    <div class="row-btns" style="margin-top:18px">
+      <button class="btn ghost" id="mCancel">Cancelar</button>
+      <button class="btn gold grow" id="mSave">Salvar combinação</button>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <button class="on" data-v="painel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="9" rx="2"/><rect x="14" y="3" width="7" height="5" rx="2"/><rect x="14" y="12" width="7" height="9" rx="2"/><rect x="3" y="16" width="7" height="5" rx="2"/></svg>Painel</button>
+  <button data-v="hist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></svg>Histórico</button>
+  <button data-v="cfg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Configurar</button>
+</nav>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ================= base ================= */
+const KEY = 'hugoland-v2';
+const $ = s => document.querySelector(s);
+const uid = () => Math.random().toString(36).slice(2, 10);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ABW_URL = 'https://api-cs.casino.org/svc-evolution-game-events/api/abwonderland?page=0&size=24&sort=data.settledAt,desc&duration=6&wheelResults=ABW_WONDERSPINS_5,ABW_WOLTERSPINS,ABW_WONDERSPINS_2,ABW_MAGIC_DICE,ABW_10,ABW_5,ABW_2,ABW_1,ABW_CARD_SOLDIERS';
+const LIVE_DEFAULT = () => ({on:true, mode:'direct', url:ABW_URL, interval:10, id:'id', time:'data.settledAt', result:'data.result.wheelSector'});
+const DEFAULT_SEGS = () => [
+  {id:'s1', label:'1', color:'#F5C542', aliases:'ABW_1'},
+  {id:'s2', label:'2', color:'#5AA9F0', aliases:'ABW_2'},
+  {id:'s5', label:'5', color:'#D07BE8', aliases:'ABW_5'},
+  {id:'s10', label:'10', color:'#35D69B', aliases:'ABW_10'},
+  {id:'b2w', label:'2 Wonder Spins', color:'#FF9F43', aliases:'ABW_WONDERSPINS_2'},
+  {id:'b5w', label:'5 Wonder Spins', color:'#FF6B81', aliases:'ABW_WONDERSPINS_5'},
+  {id:'bwolter', label:'Wolter Spins', color:'#9B7BFF', aliases:'ABW_WOLTERSPINS, wolterspins'},
+  {id:'bdice', label:'Magic Dice', color:'#4FD1C5', aliases:'ABW_MAGIC_DICE, magicdice'},
+  {id:'bcard', label:'Card Soldiers', color:'#C9C3DE', aliases:'ABW_CARD_SOLDIERS, cardsoldiers'},
+];
+const newState = () => ({
+  v: 2,
+  segments: DEFAULT_SEGS(),
+  monitors: [
+    {id:uid(), name:'1 e 2', values:['s1','s2'], mode:'any', alert:0},
+    {id:uid(), name:'10', values:['s10'], mode:'any', alert:25},
+    {id:uid(), name:'Bônus', values:['b2w','b5w','bwolter','bdice'], mode:'any', alert:30},
+  ],
+  rounds: [],
+  live: LIVE_DEFAULT(),
+  maxRounds: 50000,
+  wake: true,
+  sort: 'manual'
+});
+let state = newState();
+
+/* ================= armazenamento ================= */
+async function load(){
+  try{ if(window.storage){ const r = await window.storage.get(KEY, false); if(r) return JSON.parse(r.value); } }catch(e){}
+  try{ const s = localStorage.getItem(KEY) || localStorage.getItem('hugoland-v1'); if(s) return JSON.parse(s); }catch(e){}
+  return null;
+}
+let saveT;
+function save(){
+  clearTimeout(saveT);
+  saveT = setTimeout(async () => {
+    const data = JSON.stringify(state);
+    try{ if(window.storage){ await window.storage.set(KEY, data, false); return; } }catch(e){}
+    try{ localStorage.setItem(KEY, data); }catch(e){ toast('Não foi possível salvar: espaço cheio?'); }
+  }, 200);
+}
+function normalize(d){
+  const base = newState();
+  const out = Object.assign(base, d);
+  out.live = Object.assign(LIVE_DEFAULT(), d.live || {});
+  if(!Array.isArray(out.segments) || !out.segments.length) out.segments = DEFAULT_SEGS();
+  if(!Array.isArray(out.monitors)) out.monitors = [];
+  if(!Array.isArray(out.rounds)) out.rounds = [];
+  out.monitors.forEach(m => { if(m.mode !== 'seq') m.mode = 'any'; m.alert = +m.alert || 0; });
+  return out;
+}
+
+/* ================= cálculo ================= */
+const seg = id => state.segments.find(s => s.id === id);
+const segLabel = id => (seg(id) || {label: '?'}).label;
+const isSmall = l => String(l).length > 3;
+const chip = id => { const s = seg(id); return s ? `<span class="chip" style="background:${s.color}">${esc(s.label)}</span>` : ''; };
+const ball = (id, cls = '') => { const s = seg(id) || {label:'?', color:'#888'}; return `<span class="ball ${isSmall(s.label) ? 'sm' : ''} ${cls}" style="background:${s.color}" title="${esc(s.label)}">${esc(s.label)}</span>`; };
+
+function hitAt(m, i){
+  const R = state.rounds;
+  if(!m.values.length) return false;
+  if(m.mode === 'seq'){
+    const k = m.values.length;
+    if(i < k - 1) return false;
+    for(let j = 0; j < k; j++) if(!R[i - k + 1 + j].v.includes(m.values[j])) return false;
+    return true;
+  }
+  return R[i].v.some(x => m.values.includes(x));
+}
+function computeStats(m){
+  const n = state.rounds.length;
+  let last = -1, record = 0, hits = 0, gapSum = 0, gaps = 0;
+  for(let i = 0; i < n; i++){
+    if(hitAt(m, i)){
+      const gap = last === -1 ? i : i - last - 1;
+      if(last !== -1){ gapSum += gap; gaps++; }
+      record = Math.max(record, gap);
+      last = i; hits++;
+    }
+  }
+  const current = last === -1 ? n : n - 1 - last;
+  record = Math.max(record, current);
+  return {n, current, record, hits, avg: gaps ? gapSum / gaps : null, lastT: last >= 0 ? state.rounds[last].t : null, firstT: n ? state.rounds[0].t : null};
+}
+let ver = 0; const cache = new Map();
+function touch(){ ver++; cache.clear(); }
+function stats(m){
+  const k = `${m.id}|${ver}|${m.mode}|${m.values.join(',')}`;
+  if(!cache.has(k)) cache.set(k, computeStats(m));
+  return cache.get(k);
+}
+function sinceSeg(id){
+  const R = state.rounds;
+  for(let i = R.length - 1; i >= 0; i--) if(R[i].v.includes(id)) return R.length - 1 - i;
+  return null;
+}
+function fmtDur(ms){
+  const s = Math.max(0, Math.floor(ms / 1000)), h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), ss = s % 60, p = n => String(n).padStart(2, '0');
+  return h ? `${h}:${p(m)}:${p(ss)}` : `${m}:${p(ss)}`;
+}
+const fmtDate = t => new Date(t).toLocaleDateString('pt-BR');
+const fmtTime = t => new Date(t).toLocaleTimeString('pt-BR');
+const ruleTxt = m => m.mode === 'seq' ? 'Zera quando sai a sequência' : 'Zera quando sai qualquer um';
+
+/* ================= render: topo ================= */
+let lastStripLen = 0;
+function renderTop(){
+  $('#roundCount').textContent = state.rounds.length.toLocaleString('pt-BR');
+  const last = state.rounds.slice(-40).reverse();
+  const added = Math.max(0, state.rounds.length - lastStripLen);
+  $('#strip').innerHTML = last.length ? last.map((r, i) => r.v.map(id => ball(id, i < Math.min(added, 5) && lastStripLen ? 'new' : '')).join('')).join('') : '<span class="muted" style="font-size:.85rem">Aguardando rodadas…</span>';
+  lastStripLen = state.rounds.length;
+}
+
+/* ================= render: combinações ================= */
+const ICON_EDIT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>';
+const ICON_DEL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg>';
+let flashIds = new Set();
+function renderGrid(){
+  const now = Date.now();
+  let list = state.monitors.map((m, idx) => ({m, idx, st: stats(m)}));
+  if(state.sort === 'current') list.sort((a, b) => b.st.current - a.st.current);
+  if(state.sort === 'record') list.sort((a, b) => (b.st.record ? b.st.current / b.st.record : 0) - (a.st.record ? a.st.current / a.st.record : 0));
+  $('#comboCount').textContent = state.monitors.length ? `(${state.monitors.length})` : '';
+  document.querySelectorAll('#sortCtl button').forEach(b => b.classList.toggle('on', b.dataset.sort === state.sort));
+  const cards = list.map(({m, st}) => {
+    const hot = m.alert > 0 && st.current >= m.alert;
+    const pct = st.record ? Math.min(100, st.current / st.record * 100) : 0;
+    const ref = st.lastT || st.firstT, tm = ref ? fmtDur(now - ref) + (st.lastT ? '' : '+') : '—';
+    const sep = m.mode === 'seq' ? '<span class="muted">→</span>' : '';
+    return `<article class="combo ${hot ? 'hot' : ''} ${flashIds.has(m.id) ? 'flash' : ''}" data-id="${m.id}">
+      <div class="c-head">
+        <div><div class="c-name">${esc(m.name)}</div><div class="c-rule">${ruleTxt(m)}${m.alert ? ` · alerta em ${m.alert}` : ''}</div></div>
+        <div class="c-act"><button class="icon" data-edit="${m.id}" aria-label="Editar ${esc(m.name)}">${ICON_EDIT}</button><button class="icon" data-del="${m.id}" aria-label="Excluir ${esc(m.name)}">${ICON_DEL}</button></div>
+      </div>
+      <div class="chips">${m.values.map(chip).join(sep)}</div>
+      <div class="c-main"><div class="count num">${st.current}</div><div class="count-lbl">rodadas<br>sem sair</div></div>
+      <div class="prog" title="Sequência atual em relação ao recorde"><i style="width:${pct}%"></i></div>
+      <div class="stats">
+        <div>Recorde<b class="num">${st.record}</b></div>
+        <div>Tempo<b class="num" data-tm="${ref || ''}" data-plus="${st.lastT ? '' : '+'}">${tm}</b></div>
+        <div>Saiu<b class="num">${st.hits}x</b></div>
+        <div>Média<b class="num">${st.avg == null ? '—' : st.avg.toFixed(1)}</b></div>
+      </div>
+    </article>`;
+  }).join('');
+  $('#grid').innerHTML = cards + `<button class="add" data-new><span>+</span>Nova combinação</button>`;
+  flashIds.clear();
+}
+
+/* ================= render: lateral ================= */
+function renderSide(){
+  const n = state.rounds.length;
+  const counts = {}; state.rounds.forEach(r => r.v.forEach(id => counts[id] = (counts[id] || 0) + 1));
+  $('#dist').innerHTML = state.segments.map(s => {
+    const since = sinceSeg(s.id), c = counts[s.id] || 0;
+    return `<div class="drow"><span class="nm" title="${esc(s.label)}">${esc(s.label)}</span>
+      <span class="tr" title="${c} vezes (${n ? (c / n * 100).toFixed(1) : 0}%)"><i style="width:${n ? c / n * 100 : 0}%;background:${s.color}"></i></span>
+      <span class="vl num"><b>${since == null ? '—' : since}</b></span></div>`;
+  }).join('');
+  $('#pad').innerHTML = state.segments.map(s => `<button class="key ${isSmall(s.label) ? 'sm' : ''}" style="background:${s.color}" data-key="${s.id}" aria-label="Registrar ${esc(s.label)}">${esc(s.label)}</button>`).join('');
+  $('#undo').disabled = !n;
+}
+
+/* ================= render: histórico ================= */
+function renderHist(){
+  const n = state.rounds.length, SHOW = 300;
+  $('#histInfo').textContent = `(${n.toLocaleString('pt-BR')} rodadas)`;
+  $('#histNote').textContent = n > SHOW ? `Mostrando as ${SHOW} mais recentes. O Excel e o JSON trazem todas.` : '';
+  const mons = state.monitors;
+  $('#histHead').innerHTML = `<tr><th>Nº</th><th>Data</th><th>Hora</th><th>Resultado</th>${mons.map(m => `<th title="Sequência após a rodada">${esc(m.name)}</th>`).join('')}<th></th></tr>`;
+  if(!n){ $('#histBody').innerHTML = `<tr><td colspan="${5 + mons.length}" class="muted" style="text-align:center;padding:30px">Nenhuma rodada ainda.</td></tr>`; return; }
+  const seqs = runningSeqs(Math.max(0, n - SHOW));
+  const rows = [];
+  for(let i = n - 1; i >= Math.max(0, n - SHOW); i--){
+    const r = state.rounds[i];
+    rows.push(`<tr><td class="muted num">${i + 1}</td><td class="num">${fmtDate(r.t)}</td><td class="num">${fmtTime(r.t)}</td><td>${r.v.map(chip).join(' ')}</td>${mons.map((m, j) => { const v = seqs[j][i]; return `<td class="num ${v === 0 ? 'hit' : ''}">${v === 0 ? '0 ✓' : v}</td>`; }).join('')}<td><button class="icon" data-rdel="${i}" aria-label="Apagar rodada ${i + 1}">${ICON_DEL}</button></td></tr>`);
+  }
+  $('#histBody').innerHTML = rows.join('');
+}
+/* sequência de cada combinação logo após cada rodada (0 = saiu) */
+function runningSeqs(from = 0){
+  return state.monitors.map(m => {
+    const out = new Array(state.rounds.length); let c = 0;
+    for(let i = 0; i < state.rounds.length; i++){ c = hitAt(m, i) ? 0 : c + 1; if(i >= from) out[i] = c; }
+    return out;
+  });
+}
+
+/* ================= render: configurar ================= */
+function renderCfg(){
+  const L = state.live;
+  $('#liveOn').checked = !!L.on; $('#wakeOn').checked = state.wake !== false;
+  $('#liveInt').value = L.interval; $('#maxRounds').value = state.maxRounds;
+  $('#liveMode').value = L.mode === 'server' ? 'server' : 'direct';
+  $('#liveUrl').value = L.url || ''; $('#pId').value = L.id || ''; $('#pTime').value = L.time || ''; $('#pResult').value = L.result || '';
+  $('#segList').innerHTML = state.segments.map(s => `<div class="segrow">
+      <input type="color" value="${s.color}" data-color="${s.id}" aria-label="Cor de ${esc(s.label)}">
+      <input type="text" value="${esc(s.label)}" data-label="${s.id}" aria-label="Nome">
+      <input type="text" value="${esc(s.aliases || '')}" data-alias="${s.id}" aria-label="Outros nomes" placeholder="nome na fonte">
+      <button class="icon" data-sdel="${s.id}" aria-label="Remover ${esc(s.label)}">${ICON_DEL}</button></div>`).join('');
+}
+
+function renderAll(){ renderTop(); renderGrid(); renderSide(); renderHist(); renderCfg(); }
+function renderLive(){ renderTop(); renderGrid(); renderSide(); if($('#v-hist').classList.contains('on')) renderHist(); }
+
+/* ================= rodadas ================= */
+function trim(){ const max = Math.max(100, +state.maxRounds || 50000); if(state.rounds.length > max) state.rounds.splice(0, state.rounds.length - max); }
+function addRounds(list){
+  if(!list.length) return;
+  const before = new Map(state.monitors.map(m => [m.id, stats(m)]));
+  state.rounds.push(...list);
+  state.rounds.sort((a, b) => a.t - b.t);
+  trim(); touch();
+  const alerts = [];
+  state.monitors.forEach(m => {
+    const b = before.get(m.id), a = stats(m);
+    if(a.hits > b.hits) flashIds.add(m.id);
+    if(m.alert > 0 && b.current < m.alert && a.current >= m.alert) alerts.push(m.name);
+  });
+  if(alerts.length){ try{ navigator.vibrate && navigator.vibrate([250, 120, 250]); }catch(e){} toast('Alerta: ' + alerts.join(', ')); }
+  save(); renderLive();
+}
+const addManual = id => addRounds([{t: Date.now(), v: [id], src: 'manual'}]);
+
+/* ================= fonte ao vivo ================= */
+const norm = x => String(x).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, '');
+function findSeg(name){
+  const k = norm(name);
+  return state.segments.find(s => norm(s.label) === k || String(s.aliases || '').split(',').some(a => a.trim() && norm(a) === k));
+}
+function segFor(name){
+  let s = findSeg(name);
+  if(!s){ s = {id: 'c' + uid(), label: String(name).replace(/^ABW_/, '').slice(0, 20), color: '#8FA8FF', aliases: String(name)}; state.segments.push(s); toast('Novo resultado detectado: ' + s.label); }
+  return s.id;
+}
+function getPath(o, p){ if(!p) return o; for(const k of String(p).split('.')){ if(o == null) return undefined; o = Array.isArray(o) ? o[+k] : o[k]; } return o; }
+function toMs(v){
+  if(typeof v === 'number') return v > 1e12 ? v : v * 1000;
+  if(typeof v === 'string' && v){ if(/^\d+(\.\d+)?$/.test(v)) return toMs(+v); const t = Date.parse(v); return isNaN(t) ? null : t; }
+  return null;
+}
+function findStrings(o, test, path = '', out = [], d = 0){
+  if(o == null || d > 8) return out;
+  if(typeof o !== 'object'){ if(test(o)) out.push({path, v:o}); return out; }
+  for(const k of Object.keys(o)) findStrings(o[k], test, path ? path + '.' + k : k, out, d + 1);
+  return out;
+}
+function normalizeSource(data, L){
+  const list = Array.isArray(data) ? data : (data && (data.content || data.data || data.items || Object.values(data).find(Array.isArray)));
+  if(!Array.isArray(list)) throw new Error('não encontrei a lista de giros na resposta');
+  const items = [];
+  for(const it of list){
+    let res = L.result ? getPath(it, L.result) : null;
+    let results = res == null ? [] : (Array.isArray(res) ? res : [res]).map(x => typeof x === 'object' ? (x.name ?? x.value) : x).filter(x => x != null && String(x).trim()).map(String);
+    if(!results.length){ const h = findStrings(it, v => typeof v === 'string' && /^ABW_[A-Z0-9_]+$/.test(v)); const p = h.find(x => /result|outcome|sector/i.test(x.path)) || h[0]; if(p) results = [p.v]; }
+    if(!results.length) continue;
+    const t = (L.time && toMs(getPath(it, L.time))) || toMs(getPath(it, 'data.settledAt') ?? getPath(it, 'data.startedAt'));
+    const id = (L.id && getPath(it, L.id)) ?? getPath(it, 'id') ?? getPath(it, 'data.id') ?? `${t}-${results.join('|')}`;
+    items.push({id: String(id), t, results});
+  }
+  if(list.length && !items.length) throw new Error('a resposta chegou, mas sem resultados reconhecíveis');
+  items.sort((a, b) => (a.t || 0) - (b.t || 0));
+  return {ok: true, count: items.length, items};
+}
+async function fetchLive(override){
+  const L = state.live, direct = L.mode !== 'server';
+  let url = (override || L.url || '').trim();
+  if(!direct && (!url || url === ABW_URL)) url = '/api/rounds';
+  if(!url) throw new Error('endereço dos dados vazio');
+  let r;
+  try{ r = await fetch(url, {cache: 'no-store', headers: {'Accept': 'application/json'}}); }
+  catch(e){ throw new Error(direct && !(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform()) ? 'o navegador bloqueia a fonte (CORS). No app Android funciona.' : 'sem conexão com a fonte'); }
+  if(!r.ok) throw new Error('a fonte respondeu HTTP ' + r.status);
+  const d = await r.json().catch(() => null);
+  if(!d) throw new Error('a resposta não é JSON');
+  if(direct) return normalizeSource(d, L);
+  if(!d.ok) throw new Error(d.error || 'erro no servidor');
+  return d;
+}
+function ingest(d){
+  const seen = new Set(state.rounds.map(r => r.id).filter(Boolean));
+  const nSeg = state.segments.length;
+  const fresh = d.items.filter(it => !seen.has(it.id)).map(it => ({id: it.id, t: it.t || Date.now(), v: [...new Set(it.results.map(segFor))], src: 'api'}));
+  if(state.segments.length !== nSeg) renderCfg();
+  addRounds(fresh);
+  return fresh.length;
+}
+let liveTimer = null, busy = false, lastOk = 0;
+function setLive(cls, txt, title = ''){
+  const p = $('#livePill'); p.classList.toggle('on', cls === 'on'); p.classList.toggle('err', cls === 'err'); $('#liveTxt').textContent = txt; p.title = title;
+}
+async function poll(){
+  if(busy || !state.live.on) return;
+  busy = true;
+  try{ ingest(await fetchLive()); lastOk = Date.now(); setLive('on', 'Ao vivo'); }
+  catch(e){ setLive('err', 'Sem conexão', e.message); console.warn('Ao vivo:', e.message); }
+  finally{ busy = false; }
+}
+async function backfill(){
+  const L = state.live;
+  if(L.mode === 'server' || !/[?&]size=\d+/.test(L.url || '')) return;
+  try{ ingest(await fetchLive(L.url.replace(/([?&]size=)\d+/, '$1100'))); }catch(e){}
+}
+function restartLive(){
+  clearInterval(liveTimer); liveTimer = null;
+  if(state.live.on){ setLive('', 'Conectando…'); backfill().then(poll); liveTimer = setInterval(poll, Math.max(5, +state.live.interval || 10) * 1000); }
+  else setLive('', 'Manual');
+}
+setInterval(() => { if(state.live.on && lastOk && Date.now() - lastOk > 90000) setLive('err', 'Sem atualização', 'Última atualização há mais de 90 segundos'); }, 5000);
+document.addEventListener('visibilitychange', () => { if(!document.hidden) poll(); });
+
+/* ================= editor de combinação ================= */
+let editing = null, pick = [];
+function openModal(id){
+  editing = id || null;
+  const m = id ? state.monitors.find(x => x.id === id) : null;
+  pick = m ? [...m.values] : [];
+  $('#mTitle').textContent = m ? 'Editar combinação' : 'Nova combinação';
+  $('#mName').value = m ? m.name : '';
+  $('#mAlert').value = m ? m.alert : 0;
+  document.querySelector(`input[name=mode][value=${m && m.mode === 'seq' ? 'seq' : 'any'}]`).checked = true;
+  $('#mAdv').open = !!(m && m.mode === 'seq');
+  renderPick();
+  $('#modal').classList.add('on');
+}
+function closeModal(){ $('#modal').classList.remove('on'); }
+function renderPick(){
+  const seqMode = document.querySelector('input[name=mode]:checked').value === 'seq';
+  $('#mPick').innerHTML = state.segments.map(s => { const i = pick.indexOf(s.id);
+    return `<button class="${i > -1 ? 'on' : ''} ${isSmall(s.label) ? 'sm' : ''}" style="background:${s.color}" data-pick="${s.id}" aria-pressed="${i > -1}">${esc(s.label)}${i > -1 && seqMode ? `<span class="ord">${i + 1}</span>` : ''}</button>`; }).join('');
+}
+$('#mPick').addEventListener('click', e => { const b = e.target.closest('[data-pick]'); if(!b) return; const id = b.dataset.pick; pick = pick.includes(id) ? pick.filter(x => x !== id) : [...pick, id]; renderPick(); });
+document.querySelectorAll('input[name=mode]').forEach(r => r.addEventListener('change', renderPick));
+$('#mCancel').addEventListener('click', closeModal);
+$('#modal').addEventListener('click', e => { if(e.target.id === 'modal') closeModal(); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+$('#mSave').addEventListener('click', () => {
+  if(!pick.length){ toast('Escolha pelo menos um resultado'); return; }
+  const mode = document.querySelector('input[name=mode]:checked').value;
+  const name = $('#mName').value.trim() || pick.map(segLabel).join(mode === 'seq' ? ' → ' : pick.length > 2 ? ', ' : ' e ');
+  const data = {name, values: [...pick], mode, alert: Math.max(0, parseInt($('#mAlert').value) || 0)};
+  if(editing) Object.assign(state.monitors.find(m => m.id === editing), data);
+  else state.monitors.push({id: uid(), ...data});
+  touch(); save(); closeModal(); renderGrid(); renderHist();
+  toast(editing ? 'Combinação atualizada' : 'Combinação criada');
+});
+
+/* ================= eventos do painel ================= */
+document.addEventListener('click', e => {
+  if(e.target.closest('[data-new]')) return openModal();
+  const ed = e.target.closest('[data-edit]'); if(ed) return openModal(ed.dataset.edit);
+  const del = e.target.closest('[data-del]');
+  if(del){ const m = state.monitors.find(x => x.id === del.dataset.del); if(m && confirm(`Excluir a combinação "${m.name}"?`)){ state.monitors = state.monitors.filter(x => x !== m); touch(); save(); renderGrid(); renderHist(); } return; }
+  const k = e.target.closest('[data-key]'); if(k) return addManual(k.dataset.key);
+  const rd = e.target.closest('[data-rdel]'); if(rd){ state.rounds.splice(+rd.dataset.rdel, 1); touch(); save(); renderAll(); return; }
+  const so = e.target.closest('[data-sort]'); if(so){ state.sort = so.dataset.sort; save(); renderGrid(); return; }
+});
+$('#undo').addEventListener('click', () => { if(state.rounds.pop()){ touch(); save(); renderAll(); toast('Última rodada desfeita'); } });
+
+/* ================= exportação ================= */
+const stamp = () => { const d = new Date(), p = n => String(n).padStart(2, '0'); return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}_${p(d.getHours())}${p(d.getMinutes())}`; };
+function b64FromBytes(bytes){ let s = ''; const CH = 0x8000; for(let i = 0; i < bytes.length; i += CH) s += String.fromCharCode.apply(null, bytes.subarray(i, i + CH)); return btoa(s); }
+async function deliver(name, bytes, mime){
+  const cap = window.Capacitor;
+  if(cap && cap.isNativePlatform && cap.isNativePlatform()){
+    const FS = (cap.Plugins && cap.Plugins.Filesystem) || cap.registerPlugin('Filesystem');
+    const SH = (cap.Plugins && cap.Plugins.Share) || cap.registerPlugin('Share');
+    const w = await FS.writeFile({path: name, data: b64FromBytes(bytes), directory: 'CACHE'});
+    try{ await SH.share({title: name, dialogTitle: 'Salvar ou enviar ' + name, files: [w.uri]}); }catch(e){ if(!/cancel/i.test(e.message || '')) throw e; }
+    return;
+  }
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([bytes], {type: mime}));
+  a.download = name; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+}
+function loadXLSX(){
+  if(window.XLSX) return Promise.resolve(window.XLSX);
+  const tryLoad = src => new Promise((ok, fail) => { const s = document.createElement('script'); s.src = src; s.onload = () => window.XLSX ? ok(window.XLSX) : fail(); s.onerror = fail; document.head.appendChild(s); });
+  return tryLoad('xlsx.mini.min.js').catch(() => tryLoad('https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.mini.min.js'));
+}
+function buildWorkbook(X){
+  const R = state.rounds, mons = state.monitors, seqs = runningSeqs(0);
+  const rodadas = [['Nº', 'Data', 'Hora', 'Resultado', 'Código da fonte', 'Origem', ...mons.map(m => `Seq. ${m.name}`)]];
+  R.forEach((r, i) => rodadas.push([i + 1, fmtDate(r.t), fmtTime(r.t), r.v.map(segLabel).join(' + '), r.v.map(id => (seg(id) || {}).aliases ? String(seg(id).aliases).split(',')[0].trim() : '').join(' + '), r.src === 'manual' ? 'Manual' : 'Ao vivo', ...mons.map((m, j) => seqs[j][i])]));
+  const combos = [['Combinação', 'Resultados', 'Regra', 'Sequência atual', 'Recorde', 'Vezes que saiu', 'Média entre saídas', 'Última saída', 'Alerta']];
+  mons.forEach(m => { const s = stats(m); combos.push([m.name, m.values.map(segLabel).join(m.mode === 'seq' ? ' → ' : ', '), ruleTxt(m), s.current, s.record, s.hits, s.avg == null ? '' : +s.avg.toFixed(2), s.lastT ? `${fmtDate(s.lastT)} ${fmtTime(s.lastT)}` : 'nunca', m.alert || '']); });
+  const n = R.length, counts = {}; R.forEach(r => r.v.forEach(id => counts[id] = (counts[id] || 0) + 1));
+  const resumo = [['Resultado', 'Vezes', '% das rodadas', 'Rodadas sem sair']];
+  state.segments.forEach(s => resumo.push([s.label, counts[s.id] || 0, n ? +((counts[s.id] || 0) / n * 100).toFixed(2) : 0, sinceSeg(s.id) ?? '']));
+  const wb = X.utils.book_new();
+  const sh = (rows, widths) => { const w = X.utils.aoa_to_sheet(rows); w['!cols'] = widths.map(wch => ({wch})); return w; };
+  X.utils.book_append_sheet(wb, sh(combos, [24, 32, 28, 15, 10, 14, 18, 20, 8]), 'Combinações');
+  X.utils.book_append_sheet(wb, sh(rodadas, [8, 12, 10, 18, 22, 10, ...mons.map(() => 14)]), 'Rodadas');
+  X.utils.book_append_sheet(wb, sh(resumo, [18, 10, 14, 16]), 'Resumo');
+  return wb;
+}
+$('#expXlsx').addEventListener('click', async () => {
+  if(!state.rounds.length) return toast('Ainda não há rodadas para exportar');
+  toast('Gerando Excel…');
+  try{
+    const X = await loadXLSX();
+    const out = X.write(buildWorkbook(X), {bookType: 'xlsx', type: 'array'});
+    await deliver(`hugoland_${stamp()}.xlsx`, new Uint8Array(out), 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    toast('Excel gerado');
+  }catch(e){ console.error(e); toast('Não consegui gerar o Excel' + (e && e.message ? ': ' + e.message : ' (sem internet?)')); }
+});
+function buildJson(){
+  const seqs = runningSeqs(0);
+  return {
+    app: 'Hugoland', versao: 2, exportado_em: new Date().toISOString(),
+    combinacoes: state.monitors.map(m => { const s = stats(m); return {nome: m.name, resultados: m.values.map(segLabel), regra: m.mode === 'seq' ? 'sequencia' : 'qualquer_um', sequencia_atual: s.current, recorde: s.record, vezes_que_saiu: s.hits, media_entre_saidas: s.avg, alerta: m.alert}; }),
+    rodadas: state.rounds.map((r, i) => ({n: i + 1, data_hora: new Date(r.t).toISOString(), resultado: r.v.map(segLabel), id_fonte: r.id || null, origem: r.src === 'manual' ? 'manual' : 'ao_vivo', sequencias: Object.fromEntries(state.monitors.map((m, j) => [m.name, seqs[j][i]]))})),
+    backup: state
+  };
+}
+$('#expJson').addEventListener('click', async () => {
+  try{ await deliver(`hugoland_${stamp()}.json`, new TextEncoder().encode(JSON.stringify(buildJson(), null, 1)), 'application/json'); toast('JSON gerado'); }
+  catch(e){ toast('Não consegui gerar o JSON: ' + e.message); }
+});
+$('#impJson').addEventListener('click', () => $('#fileIn').click());
+$('#fileIn').addEventListener('change', async e => {
+  const f = e.target.files[0]; if(!f) return;
+  try{
+    const d = JSON.parse(await f.text()), b = d.backup || d;
+    if(!Array.isArray(b.rounds) || !Array.isArray(b.monitors)) throw new Error();
+    if(confirm(`Importar ${b.rounds.length} rodadas e ${b.monitors.length} combinações? Os dados atuais serão substituídos.`)){ state = normalize(b); touch(); save(); renderAll(); restartLive(); toast('Importado'); }
+  }catch(err){ toast('Arquivo inválido: use um JSON exportado pelo Hugoland'); }
+  e.target.value = '';
+});
+$('#clearHist').addEventListener('click', () => { if(state.rounds.length && confirm('Apagar todas as rodadas? As combinações continuam.')){ state.rounds = []; touch(); save(); renderAll(); toast('Histórico apagado'); } });
+
+/* ================= configurar ================= */
+$('#liveOn').addEventListener('change', e => { state.live.on = e.target.checked; save(); restartLive(); });
+$('#liveInt').addEventListener('change', e => { state.live.interval = Math.max(5, parseInt(e.target.value) || 10); e.target.value = state.live.interval; save(); restartLive(); });
+$('#maxRounds').addEventListener('change', e => { state.maxRounds = Math.max(100, parseInt(e.target.value) || 50000); e.target.value = state.maxRounds; trim(); touch(); save(); renderAll(); });
+$('#liveMode').addEventListener('change', e => { const L = state.live; L.mode = e.target.value; if(L.mode === 'server' && (!L.url || L.url === ABW_URL)) L.url = '/api/rounds'; if(L.mode === 'direct' && (!L.url || L.url.startsWith('/'))) L.url = ABW_URL; renderCfg(); save(); restartLive(); });
+[['#liveUrl','url'],['#pId','id'],['#pTime','time'],['#pResult','result']].forEach(([sel, k]) => $(sel).addEventListener('change', e => { state.live[k] = e.target.value.trim(); save(); restartLive(); }));
+$('#liveReset').addEventListener('click', () => { state.live = Object.assign(LIVE_DEFAULT(), {on: state.live.on, interval: state.live.interval}); renderCfg(); save(); restartLive(); toast('Fonte padrão restaurada'); });
+$('#liveTest').addEventListener('click', async () => {
+  const out = $('#liveOut'); out.classList.add('on'); out.textContent = 'Testando…';
+  try{
+    const d = await fetchLive(), last = d.items[d.items.length - 1];
+    const names = [...new Set(d.items.flatMap(i => i.results))], unknown = names.filter(n => !findSeg(n));
+    out.textContent = `✓ Conectado: ${d.count} giros recebidos.\n` + (last ? `Último: ${last.results.map(x => (findSeg(x) || {label: x}).label).join(' + ')} às ${last.t ? fmtTime(last.t) : '?'}\n` : '') + (unknown.length ? `Sem botão: ${unknown.join(', ')} (serão criados automaticamente)` : 'Todos os resultados reconhecidos.');
+  }catch(e){ out.textContent = '✗ Falhou: ' + e.message; }
+});
+$('#segList').addEventListener('input', e => {
+  const t = e.target;
+  if(t.dataset.color) seg(t.dataset.color).color = t.value;
+  else if(t.dataset.label) seg(t.dataset.label).label = t.value || '?';
+  else if(t.dataset.alias){ seg(t.dataset.alias).aliases = t.value; save(); return; }
+  save(); renderTop(); renderGrid(); renderSide();
+});
+$('#segList').addEventListener('click', e => {
+  const b = e.target.closest('[data-sdel]'); if(!b) return;
+  const id = b.dataset.sdel;
+  if(!confirm('Remover este resultado? Ele sai das combinações que o usam.')) return;
+  state.segments = state.segments.filter(s => s.id !== id);
+  state.monitors.forEach(m => m.values = m.values.filter(v => v !== id));
+  touch(); save(); renderAll();
+});
+$('#addSeg').addEventListener('click', () => { state.segments.push({id: 'c' + uid(), label: 'Novo', color: '#8FA8FF', aliases: ''}); save(); renderAll(); });
+$('#resetSeg').addEventListener('click', () => {
+  if(!confirm('Voltar os resultados ao padrão do jogo?')) return;
+  const defs = DEFAULT_SEGS(), ids = new Set(defs.map(s => s.id));
+  const extras = state.segments.filter(s => !ids.has(s.id) && state.rounds.some(r => r.v.includes(s.id)));
+  state.segments = [...defs, ...extras];
+  touch(); save(); renderAll();
+});
+
+/* ================= navegação, tela ligada, toast ================= */
+document.querySelectorAll('nav button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('nav button').forEach(x => x.classList.toggle('on', x === b));
+  document.querySelectorAll('.view').forEach(v => v.classList.toggle('on', v.id === 'v-' + b.dataset.v));
+  if(b.dataset.v === 'hist') renderHist();
+  window.scrollTo({top: 0});
+}));
+let wake = null;
+async function applyWake(){
+  try{
+    if(state.wake !== false && !document.hidden && 'wakeLock' in navigator){ if(!wake){ wake = await navigator.wakeLock.request('screen'); wake.addEventListener('release', () => wake = null); } }
+    else if(state.wake === false && wake){ await wake.release(); wake = null; }
+  }catch(e){ wake = null; }
+}
+document.addEventListener('visibilitychange', applyWake);
+$('#wakeOn').addEventListener('change', e => { state.wake = e.target.checked; save(); applyWake(); });
+function toast(msg){ const t = $('#toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('on'), 2400); }
+
+setInterval(() => { const now = Date.now(); document.querySelectorAll('[data-tm]').forEach(el => { if(el.dataset.tm) el.textContent = fmtDur(now - +el.dataset.tm) + el.dataset.plus; }); }, 1000);
+(async () => {
+  const d = await load();
+  if(d) state = normalize(d);
+  touch(); renderAll(); restartLive(); applyWake();
+})();
+</script>
+</body>
+</html>

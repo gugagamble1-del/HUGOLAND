@@ -1,0 +1,9 @@
+{
+  "appId": "br.hugoland.app",
+  "appName": "Hugoland",
+  "webDir": "www",
+  "android": { "backgroundColor": "#1B1530" },
+  "plugins": {
+    "CapacitorHttp": { "enabled": true }
+  }
+}
